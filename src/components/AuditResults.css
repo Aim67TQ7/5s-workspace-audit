@@ -1,0 +1,250 @@
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.back-btn:hover {
+  color: var(--text);
+}
+
+.results-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.action-btn:hover {
+  background: var(--surface-hover);
+}
+
+.results-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.results-title h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.results-title p {
+  color: var(--text-muted);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overall-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.overall-section h2 {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.breakdown-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.breakdown-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.category-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.category-score {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.category-bar {
+  height: 6px;
+  background: var(--bg);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.category-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.category-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.images-section {
+  margin-bottom: 2rem;
+}
+
+.images-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.images-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.findings-section,
+.recommendations-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.findings-section h3,
+.recommendations-section h3 {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.findings-category {
+  margin-bottom: 1.5rem;
+}
+
+.findings-category:last-child {
+  margin-bottom: 0;
+}
+
+.findings-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.findings-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1.25rem;
+}
+
+.finding-item {
+  padding: 0.75rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--border);
+}
+
+.finding-item.severity-minor {
+  border-left-color: var(--success);
+}
+
+.finding-item.severity-moderate {
+  border-left-color: var(--warning);
+}
+
+.finding-item.severity-major {
+  border-left-color: var(--danger);
+}
+
+.finding-text {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.finding-location {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-left: 1.25rem;
+}
+
+.recommendations-list li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

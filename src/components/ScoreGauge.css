@@ -1,0 +1,37 @@
+.score-gauge {
+  position: relative;
+}
+
+.score-gauge svg {
+  transform: rotate(-90deg);
+}
+
+.gauge-bg {
+  stroke: var(--border);
+}
+
+.gauge-fill {
+  transition: stroke-dashoffset 1s ease-out;
+  stroke-linecap: round;
+}
+
+.gauge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-score {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gauge-grade {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}

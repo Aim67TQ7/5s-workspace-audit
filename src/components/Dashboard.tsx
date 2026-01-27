@@ -1,6 +1,8 @@
 import { ClipboardCheck, Plus } from 'lucide-react'
 import type { Assessment } from '../types'
 import ScoreGauge from './ScoreGauge'
+import RadarChart from './RadarChart'
+import TrendChart from './TrendChart'
 import './Dashboard.css'
 
 interface Props {
@@ -28,6 +30,28 @@ export default function Dashboard({ assessments, onNewAudit, onViewAssessment }:
     if (score >= 60) return 'D'
     return 'F'
   }
+
+  // Calculate category averages for radar chart
+  const getCategoryAverages = () => {
+    if (assessments.length === 0) return null
+    
+    const totals = { sort: 0, set_in_order: 0, shine: 0, standardize: 0, sustain: 0 }
+    assessments.forEach(a => {
+      Object.keys(totals).forEach(key => {
+        totals[key as keyof typeof totals] += a.scores[key as keyof typeof totals] || 0
+      })
+    })
+    
+    return {
+      sort: Math.round(totals.sort / assessments.length),
+      set_in_order: Math.round(totals.set_in_order / assessments.length),
+      shine: Math.round(totals.shine / assessments.length),
+      standardize: Math.round(totals.standardize / assessments.length),
+      sustain: Math.round(totals.sustain / assessments.length),
+    }
+  }
+
+  const categoryAverages = getCategoryAverages()
 
   return (
     <div className="dashboard">
@@ -76,6 +100,20 @@ export default function Dashboard({ assessments, onNewAudit, onViewAssessment }:
               <div className="stat-label">Total Audits</div>
               <div className="stat-value">{assessments.length}</div>
               <div className="stat-sub">completed</div>
+            </div>
+          </div>
+
+          <div className="charts-section">
+            <div className="chart-card">
+              <h3>5S Profile</h3>
+              <p className="chart-subtitle">Average scores across all audits</p>
+              {categoryAverages && (
+                <RadarChart scores={categoryAverages} size={280} />
+              )}
+            </div>
+            
+            <div className="chart-card trend-card">
+              <TrendChart assessments={assessments} height={220} />
             </div>
           </div>
 

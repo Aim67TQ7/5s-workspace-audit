@@ -1,0 +1,19 @@
+.radar-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.radar-chart svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.radar-label {
+  font-weight: 500;
+}
+
+.radar-score {
+  opacity: 0.8;
+}

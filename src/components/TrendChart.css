@@ -1,0 +1,75 @@
+.trend-chart {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.trend-header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.trend-indicator {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.trend-indicator.positive {
+  color: var(--success);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.trend-indicator.negative {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.trend-chart svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.trend-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.trend-stat {
+  text-align: center;
+}
+
+.trend-stat .stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.trend-stat .stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trend-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--text-muted);
+}

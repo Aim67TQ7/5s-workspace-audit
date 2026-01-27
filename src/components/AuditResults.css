@@ -57,15 +57,40 @@
 
 .results-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .breakdown-section {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
   .results-grid {
     grid-template-columns: 1fr;
   }
+  
+  .breakdown-section {
+    grid-column: span 1;
+  }
+}
+
+.radar-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .overall-section {

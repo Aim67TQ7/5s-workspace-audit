@@ -1,6 +1,7 @@
 import { ArrowLeft, RefreshCw } from 'lucide-react'
 import type { Assessment } from '../types'
 import ScoreGauge from './ScoreGauge'
+import RadarChart from './RadarChart'
 import './AuditResults.css'
 
 interface Props {
@@ -55,6 +56,10 @@ export default function AuditResults({ assessment, onBack, onNewAudit }: Props) 
         <div className="overall-section">
           <ScoreGauge score={assessment.overall_score} size={180} />
           <h2>Overall Score</h2>
+        </div>
+
+        <div className="radar-section">
+          <RadarChart scores={assessment.scores} size={260} />
         </div>
 
         <div className="breakdown-section">
